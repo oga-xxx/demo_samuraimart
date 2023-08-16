@@ -67,6 +67,7 @@ class UserController extends AdminController
         $show->field('postal_code', __('Postal code'));
         $show->field('address', __('Address'));
         $show->field('phone', __('Phone'));
+        $show->field('deleted_flag', __('Deleted flag'));
         $show->field('created_at', __('Created at'));
         $show->field('updated_at', __('Updated at'));
 
@@ -89,6 +90,7 @@ class UserController extends AdminController
         $form->text('postal_code', __('Postal code'));
         $form->textarea('address', __('Address'));
         $form->mobile('phone', __('Phone'));
+        $form->switch('deleted_flag', __('Deleted flag'));
 
         $form->saving(function (Form $form) {
             if ($form->password && $form->model()->password != $form->password) {

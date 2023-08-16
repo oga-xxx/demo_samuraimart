@@ -6,7 +6,7 @@
     <div class="row w-75">
         <div class="col-5 offset-1">
             @if ($product->image)
-            <img src="{{ asset('$product/image')}}" class="w-100 img-fluidl">
+            <img src="{{ asset($product->image) }}" class="w-100 img-fluidl">
             @else
             <img src="{{ asset('img/dummy.png')}}" class="w-100 img-fluid">
             @endif
@@ -32,6 +32,7 @@
                 <input type="hidden" name="name" value="{{$product->name}}">
                 <input type="hidden" name="price" value="{{$product->price}}">
                 <input type="hidden" name="image" value="{{$product->image}}">
+                <input type="hidden" name="carriage" value="{{$product->carriage_flag}}">
                 <div class="form-group row">
                     <label for="quantity" class="col-sm-2 col-form-label">数量</label>
                     <div class="col-sm-10">

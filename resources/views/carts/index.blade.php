@@ -24,8 +24,8 @@
       @foreach ($cart as $product)
       <div class="col-md-2 mt-2">
         <a href="{{route('products.show', $product->id)}}">
-          @if ($product->options->image)
-            <img src="{{ asset('$product->options->image')}}" class="img-fluid w-100">
+            @if ($product->options->image)
+            <img src="{{ asset($product->options->image) }}" class="img-fluid w-100">
             @else
             <img src="{{ asset('img/dummy.png')}}" class="img-fluid w-100" alt="">
             @endif
@@ -41,6 +41,19 @@
         <h3 class="w-100 mt-4">￥{{$product->qty * $product->price}}</h3>
       </div>
       @endforeach
+    </div>
+
+    <hr>
+
+    <div class="offset-8 col-4">
+      <div class="row">
+        <div class="col-6">
+          <h2>送料</h2>
+        </div>
+        <div class="col-6">
+          <h2>￥{{ $carriage_cost }}</h2>
+        </div>
+      </div>
     </div>
 
     <hr>
